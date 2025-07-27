@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
+  base: "/portfolio/", // ✅ REQUIRED for GitHub Pages
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -29,7 +30,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "docs"), // ✅ Must match GitHub Pages folder
     emptyOutDir: true,
   },
   server: {
@@ -39,4 +40,3 @@ export default defineConfig({
     },
   },
 });
-
