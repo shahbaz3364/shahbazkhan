@@ -4,12 +4,10 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 import path from "path";
 
-// Fix for __dirname in ESM
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "/shahbazkhan/", // ✅ REQUIRED for GitHub Pages
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -31,7 +29,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "docs"), // ✅ for GitHub Pages
+    outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
   server: {
@@ -41,3 +39,4 @@ export default defineConfig({
     },
   },
 });
+
