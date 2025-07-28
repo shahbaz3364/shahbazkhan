@@ -1014,7 +1014,7 @@ body::before {
   }
 
   .nav-toggle {
-    display: flex;
+    display: none;
   }
 
   .nav-toggle.active .bar:nth-child(1) {
