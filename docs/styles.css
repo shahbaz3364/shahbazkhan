@@ -391,6 +391,7 @@ body::before {
   font-weight: 700;
   color: var(--accent-purple);
   margin-bottom: 0.5rem;
+ 
 }
 
 .stat-label {
@@ -548,7 +549,7 @@ body::before {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   opacity: 0;

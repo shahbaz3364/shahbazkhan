@@ -111,27 +111,29 @@ document.querySelectorAll('.fade-in-element').forEach(el => {
     observer.observe(el);
 });
 
-// Counter Animation
 function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
-    
+
     counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-count'));
         const duration = 2000;
         const step = target / (duration / 16);
         let current = 0;
-        
+
+        const shouldAddPlus = ['450', '280'].includes(counter.getAttribute('data-count'));
+
         const timer = setInterval(() => {
             current += step;
             if (current >= target) {
-                counter.textContent = target;
+                counter.textContent = shouldAddPlus ? `${target}+` : `${target}`;
                 clearInterval(timer);
             } else {
-                counter.textContent = Math.floor(current);
+                counter.textContent = shouldAddPlus ? `${Math.floor(current)}+` : `${Math.floor(current)}`;
             }
         }, 16);
     });
 }
+
 
 
 
