@@ -993,7 +993,7 @@ body::before {
 }
 }
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .nav-menu {
     position: fixed;
     top: var(--header-height);
