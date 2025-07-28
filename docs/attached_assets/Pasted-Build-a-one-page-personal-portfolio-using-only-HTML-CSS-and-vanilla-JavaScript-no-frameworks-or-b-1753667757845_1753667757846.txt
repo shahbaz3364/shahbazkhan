@@ -1,0 +1,104 @@
+Build a one-page personal portfolio using only HTML, CSS, and vanilla JavaScript (no frameworks or backends).
+
+It should be a dark-themed site with clean UI and animated interactions inspired by GitHub.com. Prioritize quick scanning, ease of navigation, and fun user interactions — designed for people with low attention spans.
+
+🏝️ Features to Include:
+1. Floating "Island Header"
+A bold, floating header ("island" style) with:
+
+Name: Shahbaz Khan
+
+Title: Technical SEO Specialist & Web Developer
+
+Location: Montréal, QC
+
+Contact: clickable email (mailto:), phone (tel:), and LinkedIn link
+
+Include subtle floating animations or parallax effect
+
+2. Sections (All on one page, scroll-snapping or sticky nav if possible)
+Professional Summary
+Show resume summary with a short fade-in on scroll.
+
+Core Skills
+Organized by category in icon-based grid or animated cards (e.g. SEO, Dev, CMS, UX, Communication).
+
+Featured Projects
+Display these 6 live projects as interactive cards or panels:
+
+https://enduraphysio.com/
+
+https://ccsbloomsflowers.com/
+
+https://fusiontechfw.com/
+
+https://baskonmain.net/
+
+https://tactics2toys.com/
+
+https://resilientwriters.com/
+Each card should have:
+
+Project screenshot (or placeholder image)
+
+Site title
+
+Short description (if needed)
+
+Hover animation (lift or glow)
+
+External link icon
+
+Professional Experience
+List work history using animated vertical timeline or accordion cards:
+
+Rankworks (2023–Present)
+
+RocketMedia360 (2022–2023)
+
+Z-Tech Studio (2019–2020)
+
+EDS FZE (2017–2019)
+Animate each job panel into view as you scroll.
+
+Education & Certifications
+Include degree and tools/certifications (with logos or icons if possible).
+
+3. Navigation
+Fixed top or side navigation bar with anchor links to each section.
+
+Use smooth scrolling and active state highlighting for UX polish.
+
+4. Design & Animation
+Dark background (#0d1117 or similar)
+
+Bright highlight colors (neon green, soft blue, or purple glow like GitHub’s contribution heatmap)
+
+CSS transitions: hover effects, fade-ins, slide-ins
+
+Optional extras:
+
+Custom cursor
+
+"Back to Top" floating button
+
+Scroll progress bar
+
+📱 Mobile-Responsive
+All sections should adapt to mobile screens with collapsible nav and resizable project cards.
+
+🧠 Bonus (Optional Easter Eggs)
+Keyboard shortcut (e.g. press S to highlight skills)
+
+Toggle for light/dark mode
+
+SEO audit score animation or “SEO health bar”
+
+⚙️ Technical Constraints
+No external frameworks or libraries — pure HTML, CSS, and JavaScript
+
+Use semantic HTML5 where possible
+
+All data (resume + project info) must be hardcoded into the files — no APIs or CMS
+
+Keep the project under 3 HTML files max (ideally index.html only)
