@@ -1,97 +1,117 @@
-# replit.md
+# Shahbaz Khan - Personal Portfolio
 
 ## Overview
 
-This is a modern portfolio website for Shahbaz Khan, a Web Developer & Technical SEO Specialist. The application is built using a full-stack TypeScript architecture with React on the frontend and Express.js on the backend. The project implements a dark-themed, responsive portfolio with glassmorphism design elements, smooth animations, and modern UI components.
+This is a single-page personal portfolio website for Shahbaz Khan, a Technical SEO Specialist & Web Developer from Montréal, QC. The site is built using pure HTML, CSS, and vanilla JavaScript with no frameworks or backend dependencies. It features a dark-themed design inspired by GitHub's aesthetic, with clean UI and animated interactions optimized for quick scanning and user engagement.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Design preference: Purple-themed UI matching Replit branding, with subtle animated backgrounds and professional appearance.
 
 ## System Architecture
 
-The application follows a monorepo structure with clear separation between client, server, and shared code:
+### Frontend Architecture
+- **Pure Static Site**: Single HTML file with accompanying CSS and JavaScript files
+- **No Framework Dependencies**: Built entirely with vanilla HTML5, CSS3, and ES6+ JavaScript
+- **Responsive Design**: Mobile-first approach with CSS Grid and Flexbox layouts
+- **Progressive Enhancement**: Core functionality works without JavaScript, enhanced features added via JS
 
-- **Frontend**: React with TypeScript, using Vite as the build tool
-- **Backend**: Express.js server with TypeScript
-- **Styling**: Tailwind CSS with custom glassmorphism theme and shadcn/ui components
-- **Database**: Configured for PostgreSQL with Drizzle ORM (currently using in-memory storage)
-- **Routing**: Wouter for client-side routing
+### Theme System
+- **Dual Theme Support**: Dark theme (default) and light theme toggle
+- **CSS Custom Properties**: Centralized color and spacing variables for easy theme switching
+- **System Preference Detection**: Respects user's OS theme preference on initial load
 
 ## Key Components
 
-### Frontend Architecture
-- **React Application**: Single-page application with component-based architecture
-- **UI Library**: shadcn/ui components with Radix UI primitives
-- **Styling**: Tailwind CSS with custom dark theme and glassmorphism effects
-- **State Management**: React Query for server state, local React state for UI
-- **Animations**: Framer Motion for smooth animations and transitions
-- **Navigation**: Custom navigation with smooth scrolling between sections
+### 1. Navigation System
+- **Sticky Navigation**: Fixed header with scroll progress indicator
+- **Smooth Scrolling**: Anchor-based navigation with offset compensation
+- **Mobile Menu**: Hamburger menu for mobile devices
+- **Active Link Highlighting**: Visual feedback for current section
 
-### Backend Architecture
-- **Express Server**: RESTful API server with middleware setup
-- **Storage**: Currently using in-memory storage with interface for database integration
-- **Static Assets**: Vite development server integration for hot reloading
-- **API Endpoints**: Resume download and contact form submission endpoints
+### 2. Interactive Elements
+- **Scroll Animations**: Fade-in effects triggered by viewport intersection
+- **Hover Effects**: Subtle card animations on interactive elements
 
-### Component Structure
-- **Sections**: Hero, About, Skills, Experience, Education, Projects, Contact
-- **UI Components**: Reusable components from shadcn/ui library
-- **Custom Components**: GlassCard for glassmorphism effects, custom Navigation
-- **Layout**: Responsive design with mobile-first approach
+### 3. Content Sections
+- **Minimal Hero Header**: Clean, professional hero section without animations
+- **Professional Summary**: Resume overview with scroll-triggered animations
+- **Skills Grid**: Categorized skill display with icon-based cards
+- **Project Showcase**: Interactive cards for 6 featured projects with external links
+- **Experience Timeline**: Professional background display
+- **Education Section**: Academic credentials
+
+### 4. Visual Enhancements
+- **Clean Design**: Minimal shadows and subtle borders
+- **Professional Colors**: GitHub-inspired dark theme with blue accents
+- **Smooth Transitions**: Subtle hover effects and animations
+- **Typography**: Clean, readable Inter font family
 
 ## Data Flow
 
-1. **Static Content**: Portfolio data is embedded in components (skills, experience, projects)
-2. **Resume Download**: API endpoint serves PDF resume file
-3. **Contact Form**: Form submission through API endpoint (ready for email integration)
-4. **Navigation**: Client-side smooth scrolling to page sections
-5. **Responsive Behavior**: Mobile-responsive navigation and layout adjustments
+### State Management
+- **Theme State**: Stored in localStorage, applied via CSS class toggle
+- **Navigation State**: Active section tracked via scroll position
+- **Animation State**: Intersection Observer API for scroll-triggered animations
+- **Mobile Menu State**: JavaScript toggle for responsive navigation
+
+### Event Handling
+- **Scroll Events**: Throttled scroll listeners for performance
+- **Intersection Observer**: Efficient viewport detection for animations
+- **Resize Events**: Responsive behavior adjustments
+- **Click Events**: Navigation, theme toggle, and external link handling
 
 ## External Dependencies
 
-### Core Framework Dependencies
-- **React**: Frontend framework with hooks and context
-- **Express**: Backend web server framework
-- **TypeScript**: Type safety across frontend and backend
-- **Vite**: Build tool and development server
+### Fonts
+- **Google Fonts**: Inter font family (weights 300-700)
+- **Font Awesome**: Icon library for UI elements and social links
 
-### UI and Styling
-- **Tailwind CSS**: Utility-first CSS framework
-- **Radix UI**: Accessible component primitives
-- **shadcn/ui**: Pre-built component library
-- **Framer Motion**: Animation library
-- **Lucide React**: Icon library
-
-### Database and ORM
-- **Drizzle ORM**: Type-safe database ORM
-- **@neondatabase/serverless**: Neon database driver
-- **PostgreSQL**: Database system (configured but not actively used)
-
-### Development Tools
-- **Wouter**: Lightweight routing library
-- **React Query**: Server state management
-- **class-variance-authority**: Component variant styling
-- **clsx**: Conditional class name utility
+### No Backend Dependencies
+- **Static Hosting Ready**: Can be deployed to any static hosting service
+- **No Database**: All content is hardcoded in HTML
+- **No Server-side Processing**: Pure client-side functionality
 
 ## Deployment Strategy
 
-### Build Process
-- **Frontend Build**: Vite builds React application to `dist/public`
-- **Backend Build**: esbuild bundles server code to `dist/index.js`
-- **Development**: Concurrent development with Vite dev server and tsx for backend
-- **Production**: Single Node.js process serving both API and static files
+### Static Site Deployment
+- **GitHub Pages Compatible**: Ready for GitHub Pages deployment
+- **CDN Friendly**: Optimized for content delivery networks
+- **Caching Strategy**: Long cache times for assets, short for HTML
 
-### Environment Configuration
-- **Development**: `NODE_ENV=development` with hot reloading
-- **Production**: `NODE_ENV=production` with optimized builds
-- **Database**: `DATABASE_URL` environment variable for PostgreSQL connection
-- **Static Assets**: Served from `dist/public` in production
+### Performance Optimizations
+- **Preconnect Headers**: DNS prefetching for external resources
+- **Font Display Optimization**: Font loading strategies for better performance
+- **Image Optimization**: Placeholder system for project screenshots
+- **Lazy Loading**: Deferred loading of non-critical resources
 
-### Scalability Considerations
-- **Database Ready**: Drizzle ORM configured for easy PostgreSQL integration
-- **API Structure**: RESTful endpoints ready for expansion
-- **Component Architecture**: Modular design for easy feature additions
-- **Performance**: Optimized builds with code splitting and lazy loading potential
+### Browser Compatibility
+- **Modern Browser Target**: ES6+ features require current browsers
+- **Progressive Enhancement**: Graceful degradation for older browsers
+- **CSS Grid/Flexbox**: Modern layout techniques with fallbacks
 
-The application is designed to be easily deployable on platforms like Replit, Vercel, or any Node.js hosting service, with the ability to scale from a simple portfolio to a more complex web application with database persistence and additional features.
+### Recent Changes (July 28, 2025)
+
+### Design Improvements
+- **Header Island Design**: Implemented 80% width island-style navigation bar with rounded corners and gap on top
+- **Navigation Branding**: Changed logo from "SK" to full name "Shahbaz Khan" in header
+- **Hero Section**: Removed island styling from hero, keeping clean simple layout with profile image
+- **Purple Theme Implementation**: Changed all accent colors to Replit purple (#8b5cf6)
+- **Animated Background**: Added subtle purple gradient background with slow floating animation
+- **Light Mode Readability**: Improved font colors in light theme for better contrast and readability
+- **Project Screenshots**: Replaced icon placeholders with website placeholder images
+- **Contact Section**: Added comprehensive contact form and information display
+- **Footer with Social Links**: Added footer with LinkedIn and Instagram social media links
+- **Mobile Responsive**: Optimized header island and all sections for mobile devices
+
+## File Structure
+```
+/
+├── index.html          # Main HTML file - clean, minimal structure
+├── styles.css          # Minimal professional styling with dark theme
+├── script.js           # Simplified JavaScript without cursor/animation overhead
+└── attached_assets/    # Project requirements and specifications
+```
+
+The architecture now prioritizes professional appearance, minimal design, and clean user experience while maintaining all core functionality.
